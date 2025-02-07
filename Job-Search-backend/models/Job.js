@@ -1,4 +1,3 @@
-// server/models/Job.js
 const mongoose = require('mongoose');
 
 const jobSchema = new mongoose.Schema({
@@ -7,6 +6,10 @@ const jobSchema = new mongoose.Schema({
   location: { type: String, required: true },
   type: { type: String, required: true },
   description: { type: String, required: true },
+  skillsRequired: [{ type: String }],
+  postedBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }, 
+  createdAt: { type: Date, default: Date.now },
+  updatedAt: { type: Date, default: Date.now },
 });
 
 module.exports = mongoose.model('Job', jobSchema);

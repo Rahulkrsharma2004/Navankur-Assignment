@@ -1,6 +1,5 @@
 const Job = require('../models/Job');
 
-// Get all jobs
 exports.getAllJobs = async (req, res) => {
   try {
     const jobs = await Job.find();
@@ -10,7 +9,6 @@ exports.getAllJobs = async (req, res) => {
   }
 };
 
-// Get a single job by ID
 exports.getJobById = async (req, res) => {
   try {
     const job = await Job.findById(req.params.id);
@@ -23,7 +21,6 @@ exports.getJobById = async (req, res) => {
   }
 };
 
-// Create a new job
 exports.createJob = async (req, res) => {
   try {
     const newJob = new Job(req.body);
@@ -34,7 +31,6 @@ exports.createJob = async (req, res) => {
   }
 };
 
-// Update a job
 exports.updateJob = async (req, res) => {
   try {
     const updatedJob = await Job.findByIdAndUpdate(req.params.id, req.body, {
@@ -49,7 +45,6 @@ exports.updateJob = async (req, res) => {
   }
 };
 
-// Delete a job
 exports.deleteJob = async (req, res) => {
   try {
     const deletedJob = await Job.findByIdAndDelete(req.params.id);

@@ -1,6 +1,5 @@
 const User = require('../models/User');
 
-// Get user profile
 exports.getUserProfile = async (req, res) => {
   try {
     const user = await User.findById(req.user.id).select('-password');
@@ -13,7 +12,6 @@ exports.getUserProfile = async (req, res) => {
   }
 };
 
-// Update user profile
 exports.updateUserProfile = async (req, res) => {
   try {
     const updatedUser = await User.findByIdAndUpdate(req.user.id, req.body, {
@@ -28,7 +26,6 @@ exports.updateUserProfile = async (req, res) => {
   }
 };
 
-// Delete user profile
 exports.deleteUserProfile = async (req, res) => {
   try {
     const deletedUser = await User.findByIdAndDelete(req.user.id);

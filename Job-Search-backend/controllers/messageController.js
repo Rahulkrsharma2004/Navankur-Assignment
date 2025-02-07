@@ -1,6 +1,5 @@
 const Message = require('../models/Message');
 
-// Send a message
 exports.sendMessage = async (req, res) => {
   try {
     const { sender, receiver, content } = req.body;
@@ -12,7 +11,6 @@ exports.sendMessage = async (req, res) => {
   }
 };
 
-// Get messages for a user
 exports.getMessages = async (req, res) => {
   try {
     const userId = req.user.id;
