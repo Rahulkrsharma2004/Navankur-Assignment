@@ -4,6 +4,9 @@ import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Dashboard from './pages/Dashboard';
+import Messages from './pages/Messages';
+import JobDetails from './pages/JobDetails';
 import { AuthProvider } from './context/AuthContext';
 import { JobProvider } from './context/JobContext';
 
@@ -17,6 +20,8 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/messages" element={<Messages />} />
+            <Route path="/job/:id" element={<JobDetails />} />
           </Routes>
         </Router>
       </JobProvider>
